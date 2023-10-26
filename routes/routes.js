@@ -11,6 +11,10 @@ router.post("/watering", async (req, res) => {
       throw new Error("Insufficient Parameter");
     }
 
+    if (status != "on" && status != "off") {
+      throw new Error("Status must be on or off");
+    }
+
     // call service to post watering
     const data = await pushWatering(deviceId, status, createdAt);
     res.status(200).json({ success: { data } });
