@@ -15,7 +15,8 @@ router.post("/watering", async (req, res) => {
       throw new Error("DeviceId must be between 1 and 7");
     }
 
-    if (status != "on" || status != "off") {
+    if (status === "on" || status === "off") {
+    } else {
       throw new Error("Status must be on or off");
     }
 
