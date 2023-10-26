@@ -32,13 +32,8 @@ router.get("/watering", async (req, res) => {
   }
 });
 
-
-
-
-
-
-
 router.post("/watering", async (req, res) => {
+  req.httpVersion = "1.0";
   try {
     const { deviceId, status, createdAt } = req.body;
 
