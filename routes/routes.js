@@ -26,7 +26,7 @@ router.get("/watering", async (req, res) => {
 
     // Call service to handle the GET request
     const data = await pushWatering(deviceId, status, createdAt);
-    res.status(200).json({ data: { data } });
+    res.status(200).json({ data: data });
   } catch (e) {
     res.status(400).json({ failed: e.message });
   }
