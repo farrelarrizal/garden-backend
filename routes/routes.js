@@ -22,7 +22,7 @@ router.post("/watering", async (req, res) => {
 
     // call service to post watering
     const data = await pushWatering(deviceId, status, createdAt);
-    res.status(200).json({ success: { data } });
+    res.status(200).json({ status: { status }, data: { data } });
   } catch (e) {
     res.status(400).json({ failed: e.message });
   }
