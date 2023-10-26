@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const wateringSchema = new mongoose.Schema({
   deviceId: {
     required: true,
-    type: String,
+    type: Number,
   },
   status: {
     required: true,
