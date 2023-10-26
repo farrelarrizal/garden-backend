@@ -1,0 +1,22 @@
+const express = require("express");
+const pushWatering = require("../services/watering");
+
+const router = express.Router();
+
+router.post("/watering", async (req, res) => {
+  try {
+    const { deviceId, status, createdAt } = req.body;
+
+    if (!status || !deviceId || !createdAt) {
+      throw new Error("Insufficient Parameter");
+    }
+
+    // call service to post watering
+    const data = await pushWatering(deviceId, status, createdAt);
+    res.status(200).json({ success: { data } });
+  } catch (e) {
+    res.status(400).json({ failed: e.message });
+  }
+});
+
+module.exports = router;
