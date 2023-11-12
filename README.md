@@ -12,10 +12,6 @@ And then you can initiate the project by using this
 ```
 npm install
 ```
-You can seed the database using function seeder that i made
-```
-npm run seed
-```
 Start the app using command below
 ```
 npm run dev
